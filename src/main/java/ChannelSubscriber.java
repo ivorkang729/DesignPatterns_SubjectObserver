@@ -1,6 +1,4 @@
-import java.nio.channels.Channel;
-
-public class ChannelSubscriber {
+public abstract class ChannelSubscriber {
     private String name;
 
     public ChannelSubscriber(String name) {
@@ -8,6 +6,12 @@ public class ChannelSubscriber {
     }
 
     public void subscribe(Channel channel){
-
+        channel.subscribe(this);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public abstract void handleEvent(Channel channel, Video video);
 }

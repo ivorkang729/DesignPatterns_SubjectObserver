@@ -9,7 +9,19 @@ public class Video {
         this.length = length;
     }
 
-    public void like(ChannelSubscriber user){
+    public Object getTitle() {
+        return title;
+    }
 
+    public int getLength() {
+        return length;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void like(ChannelSubscriber user){
+        System.out.println(String.format("%s 對影片 \"%s\" 按讚。", user.getName(), title));
     }
 }
